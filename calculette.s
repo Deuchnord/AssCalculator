@@ -19,19 +19,23 @@ lookforln:
 	MOV $calculPostfixe, %eax
 	ADD i, %eax
 	MOV (%eax), %eax
-	CMP 
+	CMP %eax, ln
+	JNE lookforln
 
 pushchiffres:
 	MOV $calculPostfixe, %eax
 	ADD i, %eax
 	MOV (%eax), %eax
-	CMP %eax, 0
+	MOV i, %ebx
+	CMP i, %ebx
 	JE calcul
 	PUSH %eax
-	INCL i
+	DECL i
 	JMP pushchiffres
 
 calcul:
 	POP %eax
 	POP %ebx
 	POP %ecx
+
+	
