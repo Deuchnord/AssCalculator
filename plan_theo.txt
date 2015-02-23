@@ -1,0 +1,20 @@
+main:
+	-empiler par la fin les différents symboles du calcul
+	-tant que taille < 2
+		-depiler jusqu'au premier opérateur dans un tableau
+		-"call calc" avec op et les 2 derniers entiers ( on remonte le tableau par la fin )
+		-rempiler le tableau en remontant ( pour les entiers du début de tableau )
+	-fin tant
+	-afficher le résultat
+
+calc:
+	-depiler retourn
+	-depiler g
+	-traduire g (char2int)
+	-depiler d
+	-traduire d (char2int)
+	-branchement sur op
+	-appliquer op
+	-traduire res (int2char)
+	-empiler res
+	-ret
